@@ -40,7 +40,9 @@ class HomeViewModel: HomeViewModelProtocol {
     
     // MARK: Calling Api fetcher
     internal func getAnnoucements() {
-        isLoading.value = true
+        DispatchQueue.main.async {
+            self.isLoading.value = true
+        }
         self.apiFetcher.fetchAnnoucements { [weak self] (result) in
             switch result {
             case .success(let annoucements):
