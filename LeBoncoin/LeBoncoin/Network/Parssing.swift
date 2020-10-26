@@ -12,7 +12,6 @@ func decode<T: Decodable>(_ data: Data) -> Result<T, APIError> {
   let decoder = JSONDecoder()
     do {
         let result = try decoder.decode(T.self, from: data)
-        
         return Result.success(result)
     } catch {
         return Result.failure(.parsing(description: error.localizedDescription))

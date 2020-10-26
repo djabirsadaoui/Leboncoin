@@ -13,6 +13,7 @@ protocol APIFetchable {
 }
 
 class APIFetcher: APIFetchable {
+    //MARK: Vars
     private let session: URLSession
     static let shared = APIFetcher()
     

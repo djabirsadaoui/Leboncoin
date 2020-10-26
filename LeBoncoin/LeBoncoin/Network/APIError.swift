@@ -12,5 +12,4 @@ enum APIError: Error {
     case network(description: String)
     case invalidURL
     case invalidResponse
-    case invalideRequest
 }
