@@ -11,17 +11,20 @@ protocol HomeViewModelProtocol {
     var items: Box<[Announcement]> {get}
     var categories: Box<[Category]> {get}
     var errorMessage: Box<String?> {get}
+    var isLoading: Box<Bool> {get}
     var filter: Category? {get set}
-    func getAnnoucements()
 }
 
 class HomeViewModel: HomeViewModelProtocol {
+    
+    
     
     //MARK: Vars
     var items: Box<[Announcement]> = Box([])
     var announcements: [Announcement] = []
     var categories: Box<[Category]> = Box([Category(id: 0, name: "All categories")])
     var errorMessage: Box<String?> = Box(nil)
+    var isLoading: Box<Bool> = Box(false)
     var filter: Category? {
         didSet {
             guard let filter = filter else {
@@ -35,10 +38,12 @@ class HomeViewModel: HomeViewModelProtocol {
     //MARK: Initializer
     init(apifetcher: APIFetchable) {
         self.apiFetcher = apifetcher
+        self.getAnnoucements()
     }
     
     // MARK: Calling Api setcher
-    func getAnnoucements() {
+    internal func getAnnoucements() {
+        isLoading.value = true
         self.apiFetcher.fetchAnnoucements { [weak self] (result) in
             switch result {
             case .success(let annoucements):
@@ -46,11 +51,12 @@ class HomeViewModel: HomeViewModelProtocol {
                 self?.setFilter(filter: 0)
                 self?.getCategories()
             case .failure(let error):
+                self?.isLoading.value = false
                 self?.errorMessage = Box(error.localizedDescription)
             }
         }
     }
-    func getCategories() {
+   internal func getCategories() {
         self.apiFetcher.fetchCategories { [weak self] (result) in
             switch result {
             case .success(let categories):
@@ -60,11 +66,12 @@ class HomeViewModel: HomeViewModelProtocol {
             case .failure(let error):
                 self?.errorMessage = Box(error.localizedDescription)
             }
+            self?.isLoading.value = false
         }
     }
     
     // MARK: funcs
-    func setCategoryForAnnoucement(_ categories: [Category]) {
+    internal func setCategoryForAnnoucement(_ categories: [Category]) {
         self.announcements = self.announcements.map({ (announcement) -> Announcement in
             var item = announcement
             let category = categories.first { return $0.id == announcement.categoryID}
@@ -72,7 +79,7 @@ class HomeViewModel: HomeViewModelProtocol {
             return item
         })
     }
-    func sortByDate(_ annoucements: [Announcement]) -> [Announcement] {
+    internal func sortByDate(_ annoucements: [Announcement]) -> [Announcement] {
         return annoucements.sorted(by: {
             if $0.isUrgent == $1.isUrgent {
                 guard  let date1 = $0.creationDate.toDate() else {
@@ -89,7 +96,7 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         })
     }
-    func setFilter(filter: Int) {
+    internal func setFilter(filter: Int) {
         // set DispatchQueue to fix readable & writeable at the same time
         DispatchQueue.main.async {
             if filter == 0 {

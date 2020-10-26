@@ -18,18 +18,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.categoryButton.title = category.name
         self.viewModel.filter = category
     })
-    var isLoading: Bool = false {
-        didSet {
-            if isLoading {
-                activityIndicator.startAnimating()
-                activityIndicator.isHidden = false
-            } else {
-                activityIndicator.stopAnimating()
-                activityIndicator.isHidden = true
-            }
-        }
-    }
-    
     //MARK: Initializer
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -48,13 +36,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK: setup the view
-    func setUpNavigation() {
+    fileprivate func setUpNavigation() {
         navigationItem.title = "Annoucements"
         self.navigationController?.navigationBar.barTintColor = UIColor.secondColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.thirdColor]
     }
-    func configure() {
+    fileprivate func configure() {
         view.addSubview(annoucementsTableView)
         view.addSubview(activityIndicator)
         headerView.addSubview(categoryButton)
@@ -76,6 +64,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         headerView.backgroundColor = UIColor.thirdColor
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         activityIndicator.tintColor = UIColor.secondColor
+        activityIndicator.hidesWhenStopped = true
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
@@ -109,18 +98,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: Biding data with viewModel
     func bindViewModel() {
-        viewModel.items.bind { (annoucements) in
-            self.isLoading = false
-            self.annoucementsTableView.reloadData()
+        viewModel.items.bind {[weak self] (annoucements) in
+            DispatchQueue.main.async {
+                self?.annoucementsTableView.reloadData()
+            }
         }
-        viewModel.categories.bind { (categories) in
-            self.categoryViewController.displayItems(items: categories)
+        viewModel.categories.bind {[weak self]  (categories) in
+            DispatchQueue.main.async {
+                self?.categoryViewController.displayItems(items: categories)
+            }
+        }
+        viewModel.isLoading.bind { [weak self]  (isLoading) in
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
         }
         viewModel.errorMessage.bind { (error) in
             // TODO
         }
-        viewModel.getAnnoucements()
-        self.isLoading = true
     }
 }
 

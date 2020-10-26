@@ -29,6 +29,13 @@
 		99C2E8862541C6AC00B2917C /* DetailAnnoucementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C2E8852541C6AC00B2917C /* DetailAnnoucementViewController.swift */; };
 		99C3EE1F2542D39F00835910 /* extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3EE1E2542D39F00835910 /* extension+UIColor.swift */; };
 		99C3EE242542D74000835910 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3EE232542D74000835910 /* CategoryViewController.swift */; };
+		99C42EAA2546D53100A5F878 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EA92546D53100A5F878 /* HomeViewControllerTests.swift */; };
+		99C42EB22546D54F00A5F878 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EB12546D54F00A5F878 /* HomeViewModelTests.swift */; };
+		99C42EB72546D63900A5F878 /* MockHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EB62546D63900A5F878 /* MockHomeViewModel.swift */; };
+		99C42EBC2546D84600A5F878 /* MockAPIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EBB2546D84600A5F878 /* MockAPIFetcher.swift */; };
+		99C42ECA2546E5C000A5F878 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EC92546E5C000A5F878 /* TestData.swift */; };
+		99C42ECF2546E91D00A5F878 /* AnnouncementsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */; };
+		99C42ED72546EA7800A5F878 /* CategoriesTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99C42ED62546EA7800A5F878 /* CategoriesTestData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,13 @@
 		99C2E8852541C6AC00B2917C /* DetailAnnoucementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnnoucementViewController.swift; sourceTree = "<group>"; };
 		99C3EE1E2542D39F00835910 /* extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIColor.swift"; sourceTree = "<group>"; };
 		99C3EE232542D74000835910 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		99C42EA92546D53100A5F878 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		99C42EB12546D54F00A5F878 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		99C42EB62546D63900A5F878 /* MockHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewModel.swift; sourceTree = "<group>"; };
+		99C42EBB2546D84600A5F878 /* MockAPIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIFetcher.swift; sourceTree = "<group>"; };
+		99C42EC92546E5C000A5F878 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnnouncementsTestData.json; sourceTree = "<group>"; };
+		99C42ED62546EA7800A5F878 /* CategoriesTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoriesTestData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +192,13 @@
 		999D7B5B25407CA100B993E0 /* LeBoncoinTests */ = {
 			isa = PBXGroup;
 			children = (
+				99C42EA82546D4AA00A5F878 /* Mock */,
+				99C42EA72546D48F00A5F878 /* Network */,
+				99C42EA32546D45900A5F878 /* Scene */,
 				999D7B5C25407CA100B993E0 /* LeBoncoinTests.swift */,
 				999D7B5E25407CA100B993E0 /* Info.plist */,
+				99C42ED62546EA7800A5F878 /* CategoriesTestData.json */,
+				99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */,
 			);
 			path = LeBoncoinTests;
 			sourceTree = "<group>";
@@ -248,6 +267,56 @@
 				99C2E8852541C6AC00B2917C /* DetailAnnoucementViewController.swift */,
 			);
 			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		99C42EA32546D45900A5F878 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				99C42EA62546D47B00A5F878 /* ShowCategories */,
+				99C42EA52546D47000A5F878 /* ShowDetail */,
+				99C42EA42546D46800A5F878 /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		99C42EA42546D46800A5F878 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				99C42EA92546D53100A5F878 /* HomeViewControllerTests.swift */,
+				99C42EB12546D54F00A5F878 /* HomeViewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		99C42EA52546D47000A5F878 /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		99C42EA62546D47B00A5F878 /* ShowCategories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowCategories;
+			sourceTree = "<group>";
+		};
+		99C42EA72546D48F00A5F878 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		99C42EA82546D4AA00A5F878 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				99C42EB62546D63900A5F878 /* MockHomeViewModel.swift */,
+				99C42EBB2546D84600A5F878 /* MockAPIFetcher.swift */,
+				99C42EC92546E5C000A5F878 /* TestData.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +431,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C42ECF2546E91D00A5F878 /* AnnouncementsTestData.json in Resources */,
+				99C42ED72546EA7800A5F878 /* CategoriesTestData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +476,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				999D7B5D25407CA100B993E0 /* LeBoncoinTests.swift in Sources */,
+				99C42EBC2546D84600A5F878 /* MockAPIFetcher.swift in Sources */,
+				99C42EB72546D63900A5F878 /* MockHomeViewModel.swift in Sources */,
+				99C42ECA2546E5C000A5F878 /* TestData.swift in Sources */,
+				99C42EAA2546D53100A5F878 /* HomeViewControllerTests.swift in Sources */,
+				99C42EB22546D54F00A5F878 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
