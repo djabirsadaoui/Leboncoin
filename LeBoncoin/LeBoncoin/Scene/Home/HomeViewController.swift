@@ -73,7 +73,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     fileprivate func setupAnnouncementTableView() {
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        activityIndicator.tintColor = UIColor.secondColor
+        activityIndicator.color = UIColor.secondColor
         activityIndicator.hidesWhenStopped = true
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
