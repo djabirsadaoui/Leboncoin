@@ -12,6 +12,7 @@ class HomeViewControllerTests: XCTestCase {
     var sut: HomeViewController!
     var mockHomeViewModel: MockHomeViewModel!
     var window: UIWindow!
+    
     // MARK: Test lifecycle
     override func setUp() {
         super.setUp()
@@ -26,11 +27,13 @@ class HomeViewControllerTests: XCTestCase {
         super.tearDown()
         
     }
+    // MARK: LoadView
     func loadView() {
         window.addSubview(sut.view)
         RunLoop.current.run(until: Date())
     }
    
+    // MARK: Tests
     func testIsLoadingStopped() throws {
         // Given
         let exp = expectation(description: "Activity indicator")
@@ -46,6 +49,7 @@ class HomeViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
     }
+    
     func testBindAnnouncement() throws {
         // Given
         let exp = expectation(description: "Reload Data")
@@ -61,6 +65,7 @@ class HomeViewControllerTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
     func testBindAnnouncementEmpty() throws {
         // Given
         let exp = expectation(description: "Reload Data")
@@ -76,6 +81,7 @@ class HomeViewControllerTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
     func testBindCategories() throws {
         // Given
         let exp = expectation(description: "Popover")
@@ -91,6 +97,7 @@ class HomeViewControllerTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
     func testDisplayPopover() throws {
         // Given
         let exp = expectation(description: "Popover")

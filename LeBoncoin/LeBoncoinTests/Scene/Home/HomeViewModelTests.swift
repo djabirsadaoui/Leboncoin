@@ -8,8 +8,11 @@
 import XCTest
 
 class HomeViewModelTests: XCTestCase {
+    // MARK: Subject under test
     var mockApiFetcher: MockAPIFetcher!
     var sut: HomeViewModel!
+    
+    // MARK: Test lifecycle
     override func setUp() {
         super.setUp()
     }
@@ -19,7 +22,8 @@ class HomeViewModelTests: XCTestCase {
         mockApiFetcher = nil
         super.tearDown()
     }
-
+    
+    // MARK: Tests
     func testGetAnnouncmentsCalled() throws {
         // Given
         mockApiFetcher = MockAPIFetcher()
@@ -28,6 +32,7 @@ class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(mockApiFetcher.isFetchAnnoucementsCalled, "fetchAnnoucements method should be called")
     }
+    
     func testGetAnnoucementsEmpty() throws {
         // Given
         mockApiFetcher = MockAPIFetcher()
@@ -36,6 +41,7 @@ class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(sut.announcements.isEmpty, "annoucements list should be empty")
     }
+    
     func testGetAnnoucementsSuccessful() throws {
         // Given
         mockApiFetcher = MockAPIFetcher()
@@ -45,6 +51,7 @@ class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(sut.announcements.count == 3, "annoucement list should be 3")
     }
+    
     func testGetAnnoucementsFailed() throws {
         // Given
         mockApiFetcher = MockAPIFetcher()
@@ -63,6 +70,7 @@ class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(mockApiFetcher.isFetchCategoriesCalled, "fetchCategories method should be called")
     }
+    
     func testGetCategoriesNotCalled() throws {
         // Given
         mockApiFetcher = MockAPIFetcher()
@@ -72,6 +80,7 @@ class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertFalse(mockApiFetcher.isFetchCategoriesCalled, "fetchCategories method should not be called")
     }
+    
     func testGetCategoriesSuccessful() throws {
         // Given
         mockApiFetcher = MockAPIFetcher()
@@ -82,6 +91,7 @@ class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(sut.categories.value.count == 12, "annoucement list should be 12")
     }
+    
     func testFilter() throws {
         // Given
         let exp = expectation(description: "Filter test")
