@@ -10,6 +10,7 @@ import Foundation
 // MARK: - Announcement
 struct Announcement: Codable {
     let id, categoryID: Int
+    var categoryName: String?
     let title, welcomeDescription: String
     let price: Int
     let imagesURL: ImagesURL
@@ -27,6 +28,7 @@ struct Announcement: Codable {
         case creationDate = "creation_date"
         case isUrgent = "is_urgent"
         case siret
+        case categoryName
     }
 }
 

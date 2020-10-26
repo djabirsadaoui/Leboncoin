@@ -6,58 +6,74 @@
 //
 
 import Foundation
+
 protocol HomeViewModelProtocol {
-    
     var items: Box<[Announcement]> {get}
     var categories: Box<[Category]> {get}
     var errorMessage: Box<String?> {get}
-    
+    var filter: Category? {get set}
     func getAnnoucements()
-    func getCategories()
-    func setFilter(for category: Category)
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    var items: Box<[Announcement]> = Box([])
-    var annoucements: [Announcement] = []
-    var categories: Box<[Category]> = Box([])
-    var errorMessage: Box<String?> = Box(nil)
     
+    //MARK: Vars
+    var items: Box<[Announcement]> = Box([])
+    var announcements: [Announcement] = []
+    var categories: Box<[Category]> = Box([Category(id: 0, name: "All categories")])
+    var errorMessage: Box<String?> = Box(nil)
+    var filter: Category? {
+        didSet {
+            guard let filter = filter else {
+                return
+            }
+            self.setFilter(filter: filter.id)
+        }
+    }
     private let apiFetcher: APIFetchable
+    
+    //MARK: Initializer
     init(apifetcher: APIFetchable) {
         self.apiFetcher = apifetcher
     }
     
+    // MARK: Calling Api setcher
     func getAnnoucements() {
         self.apiFetcher.fetchAnnoucements { [weak self] (result) in
             switch result {
             case .success(let annoucements):
-                self?.annoucements = annoucements.sorted(by: {
-                    if $0.isUrgent == $1.isUrgent {
-                        guard  let date1 = $0.creationDate.toDate() else {
-                            return false
-                        }
-                        guard let date2 = $1.creationDate.toDate() else {
-                            return true
-                        }
-                        return date1 > date2
-                    } else if $0.isUrgent {
-                        return true
-                    } else {
-                        return false
-                    }
-                })
-                self?.items.value = self?.annoucements ?? []
+                self?.announcements = self?.sortByDate(annoucements) ?? []
+                self?.setFilter(filter: 0)
+                self?.getCategories()
+            case .failure(let error):
+                self?.errorMessage = Box(error.localizedDescription)
+            }
+        }
+    }
+    func getCategories() {
+        self.apiFetcher.fetchCategories { [weak self] (result) in
+            switch result {
+            case .success(let categories):
+                self?.categories.value.append(contentsOf: categories)
+                self?.setCategoryForAnnoucement(categories)
+                self?.setFilter(filter: self?.filter?.id ?? 0)
             case .failure(let error):
                 self?.errorMessage = Box(error.localizedDescription)
             }
         }
     }
     
-    func setFilter(for category: Category) {
-        self.items.value = self.annoucements.filter({ (a) -> Bool in
-            return a.categoryID == category.id
-        }).sorted(by: {
+    // MARK: funcs
+    func setCategoryForAnnoucement(_ categories: [Category]) {
+        self.announcements = self.announcements.map({ (announcement) -> Announcement in
+            var item = announcement
+            let category = categories.first { return $0.id == announcement.categoryID}
+            item.categoryName = category?.name
+            return item
+        })
+    }
+    func sortByDate(_ annoucements: [Announcement]) -> [Announcement] {
+        return annoucements.sorted(by: {
             if $0.isUrgent == $1.isUrgent {
                 guard  let date1 = $0.creationDate.toDate() else {
                     return false
@@ -73,14 +89,19 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         })
     }
-    func getCategories() {
-        self.apiFetcher.fetchCategories { [weak self] (result) in
-            switch result {
-            case .success(let categories):
-                self?.categories.value = categories
-            case .failure(let error):
-                self?.errorMessage = Box(error.localizedDescription)
+    func setFilter(filter: Int) {
+        // set DispatchQueue to fix readable & writeable at the same time
+        DispatchQueue.main.async {
+            if filter == 0 {
+                self.items.value = self.announcements
+                return
             }
+            let array = self.announcements.filter({ (a) -> Bool in
+                return a.categoryID == filter
+            })
+            self.items.value = self.sortByDate(array)
         }
     }
 }
+
+
