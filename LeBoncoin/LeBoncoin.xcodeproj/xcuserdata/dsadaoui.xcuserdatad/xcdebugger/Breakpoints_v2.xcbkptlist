@@ -106,8 +106,8 @@
             filePath = "LeBoncoinTests/Scene/Home/HomeViewControllerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "testBindAnnouncement()"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,8 +138,8 @@
             filePath = "LeBoncoinTests/Scene/Home/HomeViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "testFilter()"
             landmarkType = "7">
          </BreakpointContent>
@@ -147,15 +147,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "497EB016-E876-4B4B-A541-7F548ADA62D0"
+            uuid = "160801D9-3BD6-4680-83AB-5D48E0F987C1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeBoncoin/Scene/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "bindViewModel()"
             landmarkType = "7">
          </BreakpointContent>
