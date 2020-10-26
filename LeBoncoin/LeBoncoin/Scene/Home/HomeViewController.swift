@@ -108,25 +108,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: Biding data with viewModel
     func bindViewModel() {
-        viewModel.items.bind { (annoucements) in
-            DispatchQueue.main.async { [weak self] in
-                self?.annoucementsTableView.reloadData()
+        viewModel.items.bind { [weak self] (annoucements) in
+            self?.annoucementsTableView.reloadData()
+        }
+        
+        viewModel.categories.bind { [weak self] (categories) in
+            self?.categoryViewController.displayItems(items: categories)
+        }
+        
+        viewModel.isLoading.bind {  [weak self](isLoading) in
+            if isLoading {
+                self?.activityIndicator.startAnimating()
+            } else {
+                self?.activityIndicator.stopAnimating()
             }
         }
-        viewModel.categories.bind { (categories) in
-            DispatchQueue.main.async { [weak self]  in
-                self?.categoryViewController.displayItems(items: categories)
-            }
-        }
-        viewModel.isLoading.bind { (isLoading) in
-            DispatchQueue.main.async { [weak self] in
-                if isLoading {
-                    self?.activityIndicator.startAnimating()
-                } else {
-                    self?.activityIndicator.stopAnimating()
-                }
-            }
-        }
+        
         viewModel.errorMessage.bind { (error) in
             if let error = error {
                 print(error)
