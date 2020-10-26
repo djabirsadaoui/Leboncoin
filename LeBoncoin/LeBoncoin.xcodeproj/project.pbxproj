@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		994132752542E74A00B7ED23 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994132742542E74A00B7ED23 /* ButtonWithImage.swift */; };
 		9941327A2543192400B7ED23 /* extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994132792543192400B7ED23 /* extension+String.swift */; };
+		994132A4254401B100B7ED23 /* DetailAnnoucementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994132A3254401B100B7ED23 /* DetailAnnoucementView.swift */; };
 		999D7B4325407C9C00B993E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B4225407C9C00B993E0 /* AppDelegate.swift */; };
-		999D7B4D25407C9C00B993E0 /* LeBoncoin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B4B25407C9C00B993E0 /* LeBoncoin.xcdatamodeld */; };
 		999D7B4F25407CA000B993E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999D7B4E25407CA000B993E0 /* Assets.xcassets */; };
 		999D7B5225407CA000B993E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999D7B5025407CA000B993E0 /* LaunchScreen.storyboard */; };
 		999D7B5D25407CA100B993E0 /* LeBoncoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B5C25407CA100B993E0 /* LeBoncoinTests.swift */; };
@@ -51,9 +51,9 @@
 /* Begin PBXFileReference section */
 		994132742542E74A00B7ED23 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		994132792543192400B7ED23 /* extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+String.swift"; sourceTree = "<group>"; };
+		994132A3254401B100B7ED23 /* DetailAnnoucementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnnoucementView.swift; sourceTree = "<group>"; };
 		999D7B3F25407C9C00B993E0 /* LeBoncoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBoncoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B4225407C9C00B993E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		999D7B4C25407C9C00B993E0 /* LeBoncoin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LeBoncoin.xcdatamodel; sourceTree = "<group>"; };
 		999D7B4E25407CA000B993E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		999D7B5125407CA000B993E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		999D7B5325407CA000B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,10 +107,36 @@
 		994132872543266B00B7ED23 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				994132A825441CE400B7ED23 /* ShowCategories */,
 				99C2E8842541C68F00B2917C /* ShowDetail */,
 				999D7BAC2541768100B993E0 /* Home */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		994132A825441CE400B7ED23 /* ShowCategories */ = {
+			isa = PBXGroup;
+			children = (
+				99C3EE232542D74000835910 /* CategoryViewController.swift */,
+			);
+			path = ShowCategories;
+			sourceTree = "<group>";
+		};
+		994132A925441D0500B7ED23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99C2E82025417F7400B2917C /* AnnoucementCellView.swift */,
+				994132742542E74A00B7ED23 /* ButtonWithImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		994132AA25441D4B00B7ED23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				994132A3254401B100B7ED23 /* DetailAnnoucementView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		999D7B3625407C9C00B993E0 = {
@@ -136,15 +162,15 @@
 		999D7B4125407C9C00B993E0 /* LeBoncoin */ = {
 			isa = PBXGroup;
 			children = (
-				994132872543266B00B7ED23 /* Scene */,
 				99C2E82B25418FD500B2917C /* Extension */,
 				999D7BB7254178DD00B993E0 /* Utils */,
+				994132872543266B00B7ED23 /* Scene */,
+				999D7B7C25407DC000B993E0 /* model */,
 				999D7B7B25407D9500B993E0 /* Network */,
 				999D7B4225407C9C00B993E0 /* AppDelegate.swift */,
 				999D7B4E25407CA000B993E0 /* Assets.xcassets */,
 				999D7B5025407CA000B993E0 /* LaunchScreen.storyboard */,
 				999D7B5325407CA000B993E0 /* Info.plist */,
-				999D7B4B25407C9C00B993E0 /* LeBoncoin.xcdatamodeld */,
 			);
 			path = LeBoncoin;
 			sourceTree = "<group>";
@@ -170,7 +196,6 @@
 		999D7B7B25407D9500B993E0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				999D7B7C25407DC000B993E0 /* model */,
 				999D7B8225407EA600B993E0 /* APIFetcher.swift */,
 				999D7B8725407EC100B993E0 /* APIConfig.swift */,
 				999D7B8C2540B36400B993E0 /* APIError.swift */,
@@ -191,11 +216,9 @@
 		999D7BAC2541768100B993E0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				994132A925441D0500B7ED23 /* Views */,
 				999D7BAD254176AD00B993E0 /* HomeViewModel.swift */,
 				999D7BB2254176CC00B993E0 /* HomeViewController.swift */,
-				99C2E82025417F7400B2917C /* AnnoucementCellView.swift */,
-				99C3EE232542D74000835910 /* CategoryViewController.swift */,
-				994132742542E74A00B7ED23 /* ButtonWithImage.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -221,6 +244,7 @@
 		99C2E8842541C68F00B2917C /* ShowDetail */ = {
 			isa = PBXGroup;
 			children = (
+				994132AA25441D4B00B7ED23 /* Views */,
 				99C2E8852541C6AC00B2917C /* DetailAnnoucementViewController.swift */,
 			);
 			path = ShowDetail;
@@ -366,13 +390,13 @@
 				999D7B8325407EA600B993E0 /* APIFetcher.swift in Sources */,
 				99C2E82D2541900300B2917C /* extension+UIImageView.swift in Sources */,
 				999D7B8D2540B36400B993E0 /* APIError.swift in Sources */,
+				994132A4254401B100B7ED23 /* DetailAnnoucementView.swift in Sources */,
 				999D7BAE254176AD00B993E0 /* HomeViewModel.swift in Sources */,
 				999D7B7E25407DEC00B993E0 /* Announcement.swift in Sources */,
 				999D7BB9254178F800B993E0 /* Box.swift in Sources */,
 				99C2E82125417F7400B2917C /* AnnoucementCellView.swift in Sources */,
 				999D7B922540B3B100B993E0 /* Parssing.swift in Sources */,
 				99C3EE242542D74000835910 /* CategoryViewController.swift in Sources */,
-				999D7B4D25407C9C00B993E0 /* LeBoncoin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +574,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -570,7 +595,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -699,19 +725,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		999D7B4B25407C9C00B993E0 /* LeBoncoin.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				999D7B4C25407C9C00B993E0 /* LeBoncoin.xcdatamodel */,
-			);
-			currentVersion = 999D7B4C25407C9C00B993E0 /* LeBoncoin.xcdatamodel */;
-			path = LeBoncoin.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 999D7B3725407C9C00B993E0 /* Project object */;
 }
