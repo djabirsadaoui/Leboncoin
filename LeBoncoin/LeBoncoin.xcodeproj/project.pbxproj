@@ -13,7 +13,6 @@
 		999D7B4325407C9C00B993E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B4225407C9C00B993E0 /* AppDelegate.swift */; };
 		999D7B4F25407CA000B993E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999D7B4E25407CA000B993E0 /* Assets.xcassets */; };
 		999D7B5225407CA000B993E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999D7B5025407CA000B993E0 /* LaunchScreen.storyboard */; };
-		999D7B5D25407CA100B993E0 /* LeBoncoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B5C25407CA100B993E0 /* LeBoncoinTests.swift */; };
 		999D7B6825407CA100B993E0 /* LeBoncoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B6725407CA100B993E0 /* LeBoncoinUITests.swift */; };
 		999D7B7E25407DEC00B993E0 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B7D25407DEC00B993E0 /* Announcement.swift */; };
 		999D7B8325407EA600B993E0 /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B8225407EA600B993E0 /* APIFetcher.swift */; };
@@ -36,6 +35,7 @@
 		99C42ECA2546E5C000A5F878 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EC92546E5C000A5F878 /* TestData.swift */; };
 		99C42ECF2546E91D00A5F878 /* AnnouncementsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */; };
 		99C42ED72546EA7800A5F878 /* CategoriesTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99C42ED62546EA7800A5F878 /* CategoriesTestData.json */; };
+		99C42EEB25472BFD00A5F878 /* AnnoucementCellViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EEA25472BFD00A5F878 /* AnnoucementCellViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,6 @@
 		999D7B5125407CA000B993E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		999D7B5325407CA000B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999D7B5825407CA100B993E0 /* LeBoncoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBoncoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		999D7B5C25407CA100B993E0 /* LeBoncoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBoncoinTests.swift; sourceTree = "<group>"; };
 		999D7B5E25407CA100B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999D7B6325407CA100B993E0 /* LeBoncoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBoncoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B6725407CA100B993E0 /* LeBoncoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBoncoinUITests.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		99C42EC92546E5C000A5F878 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnnouncementsTestData.json; sourceTree = "<group>"; };
 		99C42ED62546EA7800A5F878 /* CategoriesTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoriesTestData.json; sourceTree = "<group>"; };
+		99C42EEA25472BFD00A5F878 /* AnnoucementCellViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnoucementCellViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +195,6 @@
 				99C42EA82546D4AA00A5F878 /* Mock */,
 				99C42EA72546D48F00A5F878 /* Network */,
 				99C42EA32546D45900A5F878 /* Scene */,
-				999D7B5C25407CA100B993E0 /* LeBoncoinTests.swift */,
 				999D7B5E25407CA100B993E0 /* Info.plist */,
 				99C42ED62546EA7800A5F878 /* CategoriesTestData.json */,
 				99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */,
@@ -282,6 +281,7 @@
 		99C42EA42546D46800A5F878 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				99C42EE925472BD600A5F878 /* Views */,
 				99C42EA92546D53100A5F878 /* HomeViewControllerTests.swift */,
 				99C42EB12546D54F00A5F878 /* HomeViewModelTests.swift */,
 			);
@@ -317,6 +317,14 @@
 				99C42EC92546E5C000A5F878 /* TestData.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		99C42EE925472BD600A5F878 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99C42EEA25472BFD00A5F878 /* AnnoucementCellViewTests.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,9 +483,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999D7B5D25407CA100B993E0 /* LeBoncoinTests.swift in Sources */,
 				99C42EBC2546D84600A5F878 /* MockAPIFetcher.swift in Sources */,
 				99C42EB72546D63900A5F878 /* MockHomeViewModel.swift in Sources */,
+				99C42EEB25472BFD00A5F878 /* AnnoucementCellViewTests.swift in Sources */,
 				99C42ECA2546E5C000A5F878 /* TestData.swift in Sources */,
 				99C42EAA2546D53100A5F878 /* HomeViewControllerTests.swift in Sources */,
 				99C42EB22546D54F00A5F878 /* HomeViewModelTests.swift in Sources */,
