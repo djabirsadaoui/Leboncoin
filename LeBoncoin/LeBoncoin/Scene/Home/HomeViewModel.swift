@@ -94,7 +94,6 @@ class HomeViewModel: HomeViewModelProtocol {
         })
     }
     internal func setFilter(filter: Int) {
-        // set DispatchQueue to fix readable & writeable at the same time
         if filter == 0 {
             self.items.value = self.announcements
             return
