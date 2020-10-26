@@ -53,6 +53,7 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         }
     }
+    
     internal func getCategories() {
         self.apiFetcher.fetchCategories { [weak self] (result) in
             switch result {
@@ -76,6 +77,7 @@ class HomeViewModel: HomeViewModelProtocol {
             return item
         })
     }
+    
     internal func sortByDate(_ annoucements: [Announcement]) -> [Announcement] {
         return annoucements.sorted(by: {
             if $0.isUrgent == $1.isUrgent {
@@ -93,6 +95,7 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         })
     }
+    
     internal func setFilter(filter: Int) {
         if filter == 0 {
             self.items.value = self.announcements
