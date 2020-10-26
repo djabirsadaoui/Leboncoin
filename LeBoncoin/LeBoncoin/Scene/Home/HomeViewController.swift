@@ -9,14 +9,14 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //MARK: Vars
-    var viewModel: HomeViewModelProtocol = HomeViewModel(apifetcher: APIFetcher.shared)
-    let annoucementsTableView = UITableView()
-    let activityIndicator = UIActivityIndicatorView()
-    let headerView = UIView()
-    let categoryButton = ButtonWithImage(frame: CGRect(x: 0, y: 0, width: 120, height: 40))
-    lazy var categoryViewController: CategoryViewController = CategoryViewController(self.viewModel.categories.value, onSelect: { (category) in
-        self.categoryButton.title = category.name
-        self.viewModel.filter = category
+    lazy var viewModel: HomeViewModelProtocol = HomeViewModel(apifetcher: APIFetcher.shared)
+    lazy var annoucementsTableView = UITableView()
+    lazy var activityIndicator = UIActivityIndicatorView()
+    lazy var headerView = UIView()
+    lazy var categoryButton = ButtonWithImage(frame: CGRect(x: 0, y: 0, width: 120, height: 40))
+    lazy var categoryViewController: CategoryViewController = CategoryViewController(self.viewModel.categories.value, onSelect: { [weak self](category) in
+        self?.categoryButton.title = category.name
+        self?.viewModel.filter = category
     })
     //MARK: Initializer
     init() {
@@ -30,13 +30,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpNavigation()
+        self.setupNavigation()
         self.configure()
         self.bindViewModel()
     }
     
     //MARK: setup the view
-    fileprivate func setUpNavigation() {
+    fileprivate func setupNavigation() {
         navigationItem.title = "Annoucements"
         self.navigationController?.navigationBar.barTintColor = UIColor.secondColor
         self.navigationController?.navigationBar.isTranslucent = false
@@ -45,29 +45,41 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     fileprivate func configure() {
         view.addSubview(annoucementsTableView)
         view.addSubview(activityIndicator)
-        headerView.addSubview(categoryButton)
         view.addSubview(headerView)
+        self.setupHeadeView()
+        self.setupCategoryButton()
+        self.setupAnnouncementTableView()
+        self.setupActivityIndicator()
+    }
+    
+    fileprivate func setupCategoryButton() {
         categoryButton.translatesAutoresizingMaskIntoConstraints = false
         categoryButton.image = UIImage(named: "down_arrow")
         categoryButton.title = viewModel.categories.value.first?.name ?? "Categories"
         categoryButton.action = {
             self.displayPopoverView()
         }
-        //Add constraints
         categoryButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
         categoryButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
+    }
+    fileprivate func setupHeadeView() {
+        headerView.addSubview(categoryButton)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         headerView.heightAnchor.constraint(equalToConstant: 45).isActive = true
         headerView.backgroundColor = UIColor.thirdColor
+    }
+    fileprivate func setupAnnouncementTableView() {
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         activityIndicator.tintColor = UIColor.secondColor
         activityIndicator.hidesWhenStopped = true
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+    }
+    fileprivate func setupActivityIndicator() {
         annoucementsTableView.dataSource = self
         annoucementsTableView.delegate = self
         annoucementsTableView.rowHeight  = 140
@@ -77,14 +89,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         annoucementsTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         annoucementsTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         annoucementsTableView.register(AnnoucementCellView.self, forCellReuseIdentifier: AnnoucementCellView.identifier)
-        
     }
     
     //MARK: Handling the popover
     func displayPopoverView() {
         categoryViewController.modalPresentationStyle = .popover
         categoryViewController.preferredContentSize = CGSize(width: view.frame.width * 0.5, height: view.frame.height * 0.7)
-        
         if let pres = categoryViewController.presentationController {
             pres.delegate = self
         }

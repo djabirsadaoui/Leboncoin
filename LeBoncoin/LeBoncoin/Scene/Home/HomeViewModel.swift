@@ -16,9 +16,6 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    
-    
-    
     //MARK: Vars
     var items: Box<[Announcement]> = Box([])
     var announcements: [Announcement] = []
@@ -41,7 +38,7 @@ class HomeViewModel: HomeViewModelProtocol {
         self.getAnnoucements()
     }
     
-    // MARK: Calling Api setcher
+    // MARK: Calling Api fetcher
     internal func getAnnoucements() {
         isLoading.value = true
         self.apiFetcher.fetchAnnoucements { [weak self] (result) in
