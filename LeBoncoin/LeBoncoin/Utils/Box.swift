@@ -22,7 +22,12 @@ func bindAndFire(listener: Listener?) {
 
 var value: T {
     didSet {
-        listener?(value)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.listener?(self.value)
+        }
     }
 }
 

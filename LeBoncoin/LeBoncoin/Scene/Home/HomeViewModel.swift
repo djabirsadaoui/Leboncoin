@@ -40,9 +40,7 @@ class HomeViewModel: HomeViewModelProtocol {
     
     // MARK: Calling Api fetcher
     internal func getAnnoucements() {
-        DispatchQueue.main.async {
-            self.isLoading.value = true
-        }
+        self.isLoading.value = true
         self.apiFetcher.fetchAnnoucements { [weak self] (result) in
             switch result {
             case .success(let annoucements):
@@ -55,7 +53,7 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         }
     }
-   internal func getCategories() {
+    internal func getCategories() {
         self.apiFetcher.fetchCategories { [weak self] (result) in
             switch result {
             case .success(let categories):
@@ -97,16 +95,14 @@ class HomeViewModel: HomeViewModelProtocol {
     }
     internal func setFilter(filter: Int) {
         // set DispatchQueue to fix readable & writeable at the same time
-        DispatchQueue.main.async {
-            if filter == 0 {
-                self.items.value = self.announcements
-                return
-            }
-            let array = self.announcements.filter({ (a) -> Bool in
-                return a.categoryID == filter
-            })
-            self.items.value = self.sortByDate(array)
+        if filter == 0 {
+            self.items.value = self.announcements
+            return
         }
+        let array = self.announcements.filter({ (a) -> Bool in
+            return a.categoryID == filter
+        })
+        self.items.value = self.sortByDate(array)
     }
 }
 
