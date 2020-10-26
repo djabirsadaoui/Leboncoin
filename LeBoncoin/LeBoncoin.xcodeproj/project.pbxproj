@@ -35,7 +35,6 @@
 		99C42ECA2546E5C000A5F878 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EC92546E5C000A5F878 /* TestData.swift */; };
 		99C42ECF2546E91D00A5F878 /* AnnouncementsTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */; };
 		99C42ED72546EA7800A5F878 /* CategoriesTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99C42ED62546EA7800A5F878 /* CategoriesTestData.json */; };
-		99C42EEB25472BFD00A5F878 /* AnnoucementCellViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C42EEA25472BFD00A5F878 /* AnnoucementCellViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,6 @@
 		99C42EC92546E5C000A5F878 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnnouncementsTestData.json; sourceTree = "<group>"; };
 		99C42ED62546EA7800A5F878 /* CategoriesTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoriesTestData.json; sourceTree = "<group>"; };
-		99C42EEA25472BFD00A5F878 /* AnnoucementCellViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnoucementCellViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,7 +320,6 @@
 		99C42EE925472BD600A5F878 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				99C42EEA25472BFD00A5F878 /* AnnoucementCellViewTests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -485,7 +482,6 @@
 			files = (
 				99C42EBC2546D84600A5F878 /* MockAPIFetcher.swift in Sources */,
 				99C42EB72546D63900A5F878 /* MockHomeViewModel.swift in Sources */,
-				99C42EEB25472BFD00A5F878 /* AnnoucementCellViewTests.swift in Sources */,
 				99C42ECA2546E5C000A5F878 /* TestData.swift in Sources */,
 				99C42EAA2546D53100A5F878 /* HomeViewControllerTests.swift in Sources */,
 				99C42EB22546D54F00A5F878 /* HomeViewModelTests.swift in Sources */,
