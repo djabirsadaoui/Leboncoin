@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Announcement" representedClassName=".Announcement" syncable="YES">
+        <attribute name="categoryID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="categoryName" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="creationDate" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isUrgent" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="price" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="siret" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="welcomeDescription" attributeType="String"/>
+        <relationship name="imagesURL" maxCount="1" deletionRule="Cascade" destinationEntity="ImagesURL"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ImagesURL" representedClassName=".ImagesURL" syncable="YES">
+        <attribute name="small" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="thumb" optional="YES" attributeType="String" defaultValueString=""/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Announcement" positionX="-54" positionY="-9" width="128" height="193"/>
+        <element name="ImagesURL" positionX="-36" positionY="63" width="128" height="73"/>
+    </elements>
+</model>
