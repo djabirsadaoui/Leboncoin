@@ -11,7 +11,7 @@ class ImageStore: NSObject {
     static let imageCache = NSCache<NSString, UIImage>()
 }
 extension UIImageView {
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit)  {
+    func download(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit)  {
         contentMode = mode
         guard let url = URL(string: link) else {
             return

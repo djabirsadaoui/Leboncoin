@@ -16,9 +16,9 @@ class DetailAnnoucementView: UIView {
             categoryLabel.text = "Category: \(annoucementItem.categoryName ?? "")"
             priceLabel.text = "\(annoucementItem.price)€"
             if let url = annoucementItem.imagesURL.thumb {
-                imageView.downloaded(from: url)
+                imageView.download(from: url)
             }
-            creationDateLabel.text = annoucementItem.creationDate.getDate()
+            creationDateLabel.text = annoucementItem.creationDate.dateFromString()
             urgentLabel.isHidden = !annoucementItem.isUrgent
             detailLabel.text = "Detail: \n\(annoucementItem.welcomeDescription)"
             if let siret = annoucementItem.siret {

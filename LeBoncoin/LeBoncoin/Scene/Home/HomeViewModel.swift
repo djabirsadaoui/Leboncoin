@@ -81,11 +81,11 @@ class HomeViewModel: HomeViewModelProtocol {
     internal func sortByDate(_ annoucements: [Announcement]) -> [Announcement] {
         return annoucements.sorted(by: {
             if $0.isUrgent == $1.isUrgent {
-                guard  let date1 = $0.creationDate.toDate() else {
+                guard  let date1 = $0.creationDate.stringToDate() else {
                     return false
                 }
-                guard let date2 = $1.creationDate.toDate() else {
-                    return true
+                guard let date2 = $1.creationDate.stringToDate() else {
+                    return truex
                 }
                 return date1 > date2
             } else if $0.isUrgent {

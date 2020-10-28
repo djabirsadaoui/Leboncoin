@@ -17,7 +17,7 @@ class AnnoucementCellView: UITableViewCell {
             categoryLabel.text = annoucementItem.categoryName ?? ""
             priceLabel.text = "\(annoucementItem.price)€"
             if let url = annoucementItem.imagesURL.small {
-                annoucementImageView.downloaded(from: url, contentMode: .scaleAspectFill)
+                annoucementImageView.download(from: url, contentMode: .scaleAspectFill)
             }
             urgentLabel.isHidden = !(annoucement?.isUrgent ?? false)
         }
