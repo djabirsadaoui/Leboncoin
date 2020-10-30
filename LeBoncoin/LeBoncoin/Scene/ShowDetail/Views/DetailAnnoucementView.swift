@@ -32,8 +32,8 @@ class DetailAnnoucementView: UIView {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    let imageView:UIImageView = {
-        let img = UIImageView()
+    let imageView: MyImageView = {
+        let img = MyImageView()
         img.translatesAutoresizingMaskIntoConstraints = false 
         img.clipsToBounds = true
         return img

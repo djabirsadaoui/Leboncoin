@@ -10,9 +10,14 @@ import UIKit
 class ImageStore: NSObject {
     static let imageCache = NSCache<NSString, UIImage>()
 }
-extension UIImageView {
+class MyImageView: UIImageView {
+    private var sessionDataTask: URLSessionDataTask? {
+        willSet {
+            sessionDataTask?.cancel()
+        }
+    }
     func download(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit)  {
-        contentMode = mode
+        self.contentMode = mode
         guard let url = URL(string: link) else {
             return
         }
@@ -23,7 +28,7 @@ extension UIImageView {
                 self.image = cachedImage
             }
         } else  {
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            sessionDataTask = URLSession.shared.dataTask(with: url) { data, response, error in
                 guard
                     let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                     let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
@@ -39,7 +44,8 @@ extension UIImageView {
                     ImageStore.imageCache.setObject(image, forKey: urlToString)
                     self?.image = image
                 }
-            }.resume()
+            }
+            sessionDataTask?.resume()
         }
     }
     

@@ -22,8 +22,8 @@ class AnnoucementCellView: UITableViewCell {
             urgentLabel.isHidden = !(annoucement?.isUrgent ?? false)
         }
     }
-    let annoucementImageView:UIImageView = {
-        let img = UIImageView()
+    let annoucementImageView: MyImageView = {
+        let img = MyImageView()
         img.translatesAutoresizingMaskIntoConstraints = false 
         img.layer.cornerRadius = 80/4
         img.clipsToBounds = true
@@ -87,5 +87,9 @@ class AnnoucementCellView: UITableViewCell {
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.annoucementImageView.image = nil
     }
 }

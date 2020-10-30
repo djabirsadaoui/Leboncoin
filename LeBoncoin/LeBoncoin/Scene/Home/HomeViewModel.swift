@@ -85,7 +85,7 @@ class HomeViewModel: HomeViewModelProtocol {
                     return false
                 }
                 guard let date2 = $1.creationDate.stringToDate() else {
-                    return truex
+                    return true
                 }
                 return date1 > date2
             } else if $0.isUrgent {
