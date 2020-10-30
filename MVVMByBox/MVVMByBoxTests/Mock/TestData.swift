@@ -4,7 +4,7 @@
 //
 //  Created by dsadaoui on 26/10/2020.
 //
-@testable import LeBoncoin
+@testable import MVVMByBox
 import Foundation
 
 
@@ -34,7 +34,7 @@ class TestData {
         }
     }
     
-    static func loadCategoriess() -> [LeBoncoin.Category]{
+    static func loadCategoriess() -> [MVVMByBox.Category]{
         guard let pathString = Bundle(for: TestData.self).path(forResource: "CategoriesTestData", ofType: "json") else {
             print("CategoriesTestData.json not found")
             return []
@@ -50,7 +50,7 @@ class TestData {
         }
         let decoder = JSONDecoder()
         do {
-            let result = try decoder.decode([LeBoncoin.Category].self, from: jsonData)
+            let result = try decoder.decode([MVVMByBox.Category].self, from: jsonData)
             return result
         } catch {
             print("Unable to parsse Category Data")

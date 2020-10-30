@@ -4,7 +4,7 @@
 //
 //  Created by dsadaoui on 26/10/2020.
 //
-@testable import LeBoncoin
+@testable import MVVMByBox
 import XCTest
 
 class HomeViewModelTests: XCTestCase {
@@ -100,7 +100,7 @@ class HomeViewModelTests: XCTestCase {
         mockApiFetcher.categories = TestData.loadCategoriess()
         // When
         sut = HomeViewModel(apifetcher: mockApiFetcher)
-        sut.filter = LeBoncoin.Category(id: 4, name: "")
+        sut.filter = Category(id: 4, name: "")
         // Then
         DispatchQueue.main.async() {
             XCTAssertTrue(self.sut.items.value.count == 2, "items should be 2")

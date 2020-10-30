@@ -44,13 +44,6 @@
 			remoteGlobalIDString = 999D7B3E25407C9C00B993E0;
 			remoteInfo = LeBoncoin;
 		};
-		999D7B6425407CA100B993E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 999D7B3725407C9C00B993E0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 999D7B3E25407C9C00B993E0;
-			remoteInfo = LeBoncoin;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +57,6 @@
 		999D7B5325407CA000B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999D7B5825407CA100B993E0 /* MVVMByBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMByBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B5E25407CA100B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		999D7B6325407CA100B993E0 /* MVVMByBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMByBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B6925407CA100B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999D7B7D25407DEC00B993E0 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		999D7B8225407EA600B993E0 /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
@@ -98,13 +90,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		999D7B5525407CA100B993E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		999D7B6025407CA100B993E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -165,7 +150,6 @@
 			children = (
 				999D7B3F25407C9C00B993E0 /* MVVMByBox.app */,
 				999D7B5825407CA100B993E0 /* MVVMByBoxTests.xctest */,
-				999D7B6325407CA100B993E0 /* MVVMByBoxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,24 +343,6 @@
 			productReference = 999D7B5825407CA100B993E0 /* MVVMByBoxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		999D7B6225407CA100B993E0 /* MVVMByBoxUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 999D7B7225407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBoxUITests" */;
-			buildPhases = (
-				999D7B5F25407CA100B993E0 /* Sources */,
-				999D7B6025407CA100B993E0 /* Frameworks */,
-				999D7B6125407CA100B993E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				999D7B6525407CA100B993E0 /* PBXTargetDependency */,
-			);
-			name = MVVMByBoxUITests;
-			productName = LeBoncoinUITests;
-			productReference = 999D7B6325407CA100B993E0 /* MVVMByBoxUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -390,10 +356,6 @@
 						CreatedOnToolsVersion = 12.0.1;
 					};
 					999D7B5725407CA100B993E0 = {
-						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = 999D7B3E25407C9C00B993E0;
-					};
-					999D7B6225407CA100B993E0 = {
 						CreatedOnToolsVersion = 12.0.1;
 						TestTargetID = 999D7B3E25407C9C00B993E0;
 					};
@@ -414,7 +376,6 @@
 			targets = (
 				999D7B3E25407C9C00B993E0 /* MVVMByBox */,
 				999D7B5725407CA100B993E0 /* MVVMByBoxTests */,
-				999D7B6225407CA100B993E0 /* MVVMByBoxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -435,13 +396,6 @@
 			files = (
 				99C42ECF2546E91D00A5F878 /* AnnouncementsTestData.json in Resources */,
 				99C42ED72546EA7800A5F878 /* CategoriesTestData.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		999D7B6125407CA100B993E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,13 +439,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		999D7B5F25407CA100B993E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -499,11 +446,6 @@
 			isa = PBXTargetDependency;
 			target = 999D7B3E25407C9C00B993E0 /* MVVMByBox */;
 			targetProxy = 999D7B5925407CA100B993E0 /* PBXContainerItemProxy */;
-		};
-		999D7B6525407CA100B993E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 999D7B3E25407C9C00B993E0 /* MVVMByBox */;
-			targetProxy = 999D7B6425407CA100B993E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -684,14 +626,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MRV7A6DFL3;
-				INFOPLIST_FILE = LeBoncoinTests/Info.plist;
+				INFOPLIST_FILE = MVVMByBoxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoinTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.MVVMByBoxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -706,58 +648,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MRV7A6DFL3;
-				INFOPLIST_FILE = LeBoncoinTests/Info.plist;
+				INFOPLIST_FILE = MVVMByBoxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoinTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.MVVMByBoxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMByBox.app/MVVMByBox";
-			};
-			name = Release;
-		};
-		999D7B7325407CA100B993E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MRV7A6DFL3;
-				INFOPLIST_FILE = LeBoncoinUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoinUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LeBoncoin;
-			};
-			name = Debug;
-		};
-		999D7B7425407CA100B993E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MRV7A6DFL3;
-				INFOPLIST_FILE = LeBoncoinUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoinUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LeBoncoin;
 			};
 			name = Release;
 		};
@@ -787,15 +689,6 @@
 			buildConfigurations = (
 				999D7B7025407CA100B993E0 /* Debug */,
 				999D7B7125407CA100B993E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		999D7B7225407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBoxUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				999D7B7325407CA100B993E0 /* Debug */,
-				999D7B7425407CA100B993E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,7 +4,7 @@
 //
 //  Created by dsadaoui on 26/10/2020.
 //
-@testable import LeBoncoin
+@testable import MVVMByBox
 import XCTest
 
 class MockAPIFetcher: APIFetchable {
@@ -13,7 +13,7 @@ class MockAPIFetcher: APIFetchable {
     var isFetchAnnoucementsFailed = false
     var isFetchCategoriesFailed = false
     var announcements = [Announcement]()
-    var categories = [LeBoncoin.Category]()
+    var categories = [MVVMByBox.Category]()
     func fetchAnnoucements(completion: @escaping (Result<[Announcement], APIError>) -> Void) {
         isFetchAnnoucementsCalled = true
         if isFetchAnnoucementsFailed {
@@ -23,7 +23,7 @@ class MockAPIFetcher: APIFetchable {
         }
     }
     
-    func fetchCategories(completion: @escaping (Result<[LeBoncoin.Category], APIError>) -> Void) {
+    func fetchCategories(completion: @escaping (Result<[MVVMByBox.Category], APIError>) -> Void) {
         isFetchCategoriesCalled = true
         if isFetchCategoriesFailed {
             completion(.failure(.invalidResponse))

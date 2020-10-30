@@ -4,7 +4,7 @@
 //
 //  Created by dsadaoui on 26/10/2020.
 //
-@testable import LeBoncoin
+@testable import MVVMByBox
 import XCTest
 
 class MockHomeViewModel: HomeViewModelProtocol {
@@ -14,9 +14,9 @@ class MockHomeViewModel: HomeViewModelProtocol {
     var testData = [Announcement]()
     var items: Box<[Announcement]> = Box([])
     
-    var categories: Box<[LeBoncoin.Category]> = Box([])
+    var categories: Box<[MVVMByBox.Category]> = Box([])
     
     var errorMessage: Box<String?> = Box(nil)
     
-    var filter: LeBoncoin.Category?
+    var filter: MVVMByBox.Category?
 }

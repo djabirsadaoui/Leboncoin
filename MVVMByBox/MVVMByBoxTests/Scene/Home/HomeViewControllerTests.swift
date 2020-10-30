@@ -4,7 +4,7 @@
 //
 //  Created by dsadaoui on 26/10/2020.
 //
-@testable import LeBoncoin
+@testable import MVVMByBox
 import XCTest
 
 class HomeViewControllerTests: XCTestCase {
