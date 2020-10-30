@@ -13,7 +13,6 @@
 		999D7B4325407C9C00B993E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B4225407C9C00B993E0 /* AppDelegate.swift */; };
 		999D7B4F25407CA000B993E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999D7B4E25407CA000B993E0 /* Assets.xcassets */; };
 		999D7B5225407CA000B993E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999D7B5025407CA000B993E0 /* LaunchScreen.storyboard */; };
-		999D7B6825407CA100B993E0 /* LeBoncoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B6725407CA100B993E0 /* LeBoncoinUITests.swift */; };
 		999D7B7E25407DEC00B993E0 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B7D25407DEC00B993E0 /* Announcement.swift */; };
 		999D7B8325407EA600B993E0 /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B8225407EA600B993E0 /* APIFetcher.swift */; };
 		999D7B8825407EC100B993E0 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7B8725407EC100B993E0 /* APIConfig.swift */; };
@@ -58,15 +57,14 @@
 		994132742542E74A00B7ED23 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		994132792543192400B7ED23 /* extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+String.swift"; sourceTree = "<group>"; };
 		994132A3254401B100B7ED23 /* DetailAnnoucementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnnoucementView.swift; sourceTree = "<group>"; };
-		999D7B3F25407C9C00B993E0 /* LeBoncoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBoncoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		999D7B3F25407C9C00B993E0 /* MVVMByBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMByBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B4225407C9C00B993E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		999D7B4E25407CA000B993E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		999D7B5125407CA000B993E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		999D7B5325407CA000B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		999D7B5825407CA100B993E0 /* LeBoncoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBoncoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		999D7B5825407CA100B993E0 /* MVVMByBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMByBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B5E25407CA100B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		999D7B6325407CA100B993E0 /* LeBoncoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBoncoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		999D7B6725407CA100B993E0 /* LeBoncoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBoncoinUITests.swift; sourceTree = "<group>"; };
+		999D7B6325407CA100B993E0 /* MVVMByBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMByBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999D7B6925407CA100B993E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999D7B7D25407DEC00B993E0 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		999D7B8225407EA600B993E0 /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
@@ -155,9 +153,9 @@
 		999D7B3625407C9C00B993E0 = {
 			isa = PBXGroup;
 			children = (
-				999D7B4125407C9C00B993E0 /* LeBoncoin */,
-				999D7B5B25407CA100B993E0 /* LeBoncoinTests */,
-				999D7B6625407CA100B993E0 /* LeBoncoinUITests */,
+				999D7B4125407C9C00B993E0 /* MVVMByBox */,
+				999D7B5B25407CA100B993E0 /* MVVMByBoxTests */,
+				999D7B6625407CA100B993E0 /* MVVMByBoxUITests */,
 				999D7B4025407C9C00B993E0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,14 +163,14 @@
 		999D7B4025407C9C00B993E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				999D7B3F25407C9C00B993E0 /* LeBoncoin.app */,
-				999D7B5825407CA100B993E0 /* LeBoncoinTests.xctest */,
-				999D7B6325407CA100B993E0 /* LeBoncoinUITests.xctest */,
+				999D7B3F25407C9C00B993E0 /* MVVMByBox.app */,
+				999D7B5825407CA100B993E0 /* MVVMByBoxTests.xctest */,
+				999D7B6325407CA100B993E0 /* MVVMByBoxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		999D7B4125407C9C00B993E0 /* LeBoncoin */ = {
+		999D7B4125407C9C00B993E0 /* MVVMByBox */ = {
 			isa = PBXGroup;
 			children = (
 				99C2E82B25418FD500B2917C /* Extension */,
@@ -185,10 +183,10 @@
 				999D7B5025407CA000B993E0 /* LaunchScreen.storyboard */,
 				999D7B5325407CA000B993E0 /* Info.plist */,
 			);
-			path = LeBoncoin;
+			path = MVVMByBox;
 			sourceTree = "<group>";
 		};
-		999D7B5B25407CA100B993E0 /* LeBoncoinTests */ = {
+		999D7B5B25407CA100B993E0 /* MVVMByBoxTests */ = {
 			isa = PBXGroup;
 			children = (
 				99C42EA82546D4AA00A5F878 /* Mock */,
@@ -198,16 +196,15 @@
 				99C42ED62546EA7800A5F878 /* CategoriesTestData.json */,
 				99C42ECE2546E91D00A5F878 /* AnnouncementsTestData.json */,
 			);
-			path = LeBoncoinTests;
+			path = MVVMByBoxTests;
 			sourceTree = "<group>";
 		};
-		999D7B6625407CA100B993E0 /* LeBoncoinUITests */ = {
+		999D7B6625407CA100B993E0 /* MVVMByBoxUITests */ = {
 			isa = PBXGroup;
 			children = (
-				999D7B6725407CA100B993E0 /* LeBoncoinUITests.swift */,
 				999D7B6925407CA100B993E0 /* Info.plist */,
 			);
-			path = LeBoncoinUITests;
+			path = MVVMByBoxUITests;
 			sourceTree = "<group>";
 		};
 		999D7B7B25407D9500B993E0 /* Network */ = {
@@ -327,9 +324,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		999D7B3E25407C9C00B993E0 /* LeBoncoin */ = {
+		999D7B3E25407C9C00B993E0 /* MVVMByBox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 999D7B6C25407CA100B993E0 /* Build configuration list for PBXNativeTarget "LeBoncoin" */;
+			buildConfigurationList = 999D7B6C25407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBox" */;
 			buildPhases = (
 				999D7B3B25407C9C00B993E0 /* Sources */,
 				999D7B3C25407C9C00B993E0 /* Frameworks */,
@@ -339,14 +336,14 @@
 			);
 			dependencies = (
 			);
-			name = LeBoncoin;
+			name = MVVMByBox;
 			productName = LeBoncoin;
-			productReference = 999D7B3F25407C9C00B993E0 /* LeBoncoin.app */;
+			productReference = 999D7B3F25407C9C00B993E0 /* MVVMByBox.app */;
 			productType = "com.apple.product-type.application";
 		};
-		999D7B5725407CA100B993E0 /* LeBoncoinTests */ = {
+		999D7B5725407CA100B993E0 /* MVVMByBoxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 999D7B6F25407CA100B993E0 /* Build configuration list for PBXNativeTarget "LeBoncoinTests" */;
+			buildConfigurationList = 999D7B6F25407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBoxTests" */;
 			buildPhases = (
 				999D7B5425407CA100B993E0 /* Sources */,
 				999D7B5525407CA100B993E0 /* Frameworks */,
@@ -357,14 +354,14 @@
 			dependencies = (
 				999D7B5A25407CA100B993E0 /* PBXTargetDependency */,
 			);
-			name = LeBoncoinTests;
+			name = MVVMByBoxTests;
 			productName = LeBoncoinTests;
-			productReference = 999D7B5825407CA100B993E0 /* LeBoncoinTests.xctest */;
+			productReference = 999D7B5825407CA100B993E0 /* MVVMByBoxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		999D7B6225407CA100B993E0 /* LeBoncoinUITests */ = {
+		999D7B6225407CA100B993E0 /* MVVMByBoxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 999D7B7225407CA100B993E0 /* Build configuration list for PBXNativeTarget "LeBoncoinUITests" */;
+			buildConfigurationList = 999D7B7225407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBoxUITests" */;
 			buildPhases = (
 				999D7B5F25407CA100B993E0 /* Sources */,
 				999D7B6025407CA100B993E0 /* Frameworks */,
@@ -375,9 +372,9 @@
 			dependencies = (
 				999D7B6525407CA100B993E0 /* PBXTargetDependency */,
 			);
-			name = LeBoncoinUITests;
+			name = MVVMByBoxUITests;
 			productName = LeBoncoinUITests;
-			productReference = 999D7B6325407CA100B993E0 /* LeBoncoinUITests.xctest */;
+			productReference = 999D7B6325407CA100B993E0 /* MVVMByBoxUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -402,7 +399,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 999D7B3A25407C9C00B993E0 /* Build configuration list for PBXProject "LeBoncoin" */;
+			buildConfigurationList = 999D7B3A25407C9C00B993E0 /* Build configuration list for PBXProject "MVVMByBox" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -415,9 +412,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				999D7B3E25407C9C00B993E0 /* LeBoncoin */,
-				999D7B5725407CA100B993E0 /* LeBoncoinTests */,
-				999D7B6225407CA100B993E0 /* LeBoncoinUITests */,
+				999D7B3E25407C9C00B993E0 /* MVVMByBox */,
+				999D7B5725407CA100B993E0 /* MVVMByBoxTests */,
+				999D7B6225407CA100B993E0 /* MVVMByBoxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -492,7 +489,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999D7B6825407CA100B993E0 /* LeBoncoinUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,12 +497,12 @@
 /* Begin PBXTargetDependency section */
 		999D7B5A25407CA100B993E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 999D7B3E25407C9C00B993E0 /* LeBoncoin */;
+			target = 999D7B3E25407C9C00B993E0 /* MVVMByBox */;
 			targetProxy = 999D7B5925407CA100B993E0 /* PBXContainerItemProxy */;
 		};
 		999D7B6525407CA100B993E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 999D7B3E25407C9C00B993E0 /* LeBoncoin */;
+			target = 999D7B3E25407C9C00B993E0 /* MVVMByBox */;
 			targetProxy = 999D7B6425407CA100B993E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -646,13 +642,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MRV7A6DFL3;
-				INFOPLIST_FILE = LeBoncoin/Info.plist;
+				INFOPLIST_FILE = MVVMByBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.MVVMByBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 4.2;
@@ -667,13 +663,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MRV7A6DFL3;
-				INFOPLIST_FILE = LeBoncoin/Info.plist;
+				INFOPLIST_FILE = MVVMByBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.LeBoncoin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djabir.MVVMByBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 4.2;
@@ -699,7 +695,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBoncoin.app/LeBoncoin";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMByBox.app/MVVMByBox";
 			};
 			name = Debug;
 		};
@@ -721,7 +717,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBoncoin.app/LeBoncoin";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMByBox.app/MVVMByBox";
 			};
 			name = Release;
 		};
@@ -768,7 +764,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		999D7B3A25407C9C00B993E0 /* Build configuration list for PBXProject "LeBoncoin" */ = {
+		999D7B3A25407C9C00B993E0 /* Build configuration list for PBXProject "MVVMByBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				999D7B6A25407CA100B993E0 /* Debug */,
@@ -777,7 +773,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		999D7B6C25407CA100B993E0 /* Build configuration list for PBXNativeTarget "LeBoncoin" */ = {
+		999D7B6C25407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				999D7B6D25407CA100B993E0 /* Debug */,
@@ -786,7 +782,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		999D7B6F25407CA100B993E0 /* Build configuration list for PBXNativeTarget "LeBoncoinTests" */ = {
+		999D7B6F25407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBoxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				999D7B7025407CA100B993E0 /* Debug */,
@@ -795,7 +791,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		999D7B7225407CA100B993E0 /* Build configuration list for PBXNativeTarget "LeBoncoinUITests" */ = {
+		999D7B7225407CA100B993E0 /* Build configuration list for PBXNativeTarget "MVVMByBoxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				999D7B7325407CA100B993E0 /* Debug */,

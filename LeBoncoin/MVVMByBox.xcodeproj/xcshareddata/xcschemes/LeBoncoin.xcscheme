@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "999D7B3E25407C9C00B993E0"
-               BuildableName = "LeBoncoin.app"
-               BlueprintName = "LeBoncoin"
-               ReferencedContainer = "container:LeBoncoin.xcodeproj">
+               BuildableName = "MVVMByBox.app"
+               BlueprintName = "MVVMByBox"
+               ReferencedContainer = "container:MVVMByBox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "999D7B5725407CA100B993E0"
-               BuildableName = "LeBoncoinTests.xctest"
-               BlueprintName = "LeBoncoinTests"
-               ReferencedContainer = "container:LeBoncoin.xcodeproj">
+               BuildableName = "MVVMByBoxTests.xctest"
+               BlueprintName = "MVVMByBoxTests"
+               ReferencedContainer = "container:MVVMByBox.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "999D7B6225407CA100B993E0"
-               BuildableName = "LeBoncoinUITests.xctest"
-               BlueprintName = "LeBoncoinUITests"
-               ReferencedContainer = "container:LeBoncoin.xcodeproj">
+               BuildableName = "MVVMByBoxUITests.xctest"
+               BlueprintName = "MVVMByBoxUITests"
+               ReferencedContainer = "container:MVVMByBox.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "999D7B3E25407C9C00B993E0"
-            BuildableName = "LeBoncoin.app"
-            BlueprintName = "LeBoncoin"
-            ReferencedContainer = "container:LeBoncoin.xcodeproj">
+            BuildableName = "MVVMByBox.app"
+            BlueprintName = "MVVMByBox"
+            ReferencedContainer = "container:MVVMByBox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "999D7B3E25407C9C00B993E0"
-            BuildableName = "LeBoncoin.app"
-            BlueprintName = "LeBoncoin"
-            ReferencedContainer = "container:LeBoncoin.xcodeproj">
+            BuildableName = "MVVMByBox.app"
+            BlueprintName = "MVVMByBox"
+            ReferencedContainer = "container:MVVMByBox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
